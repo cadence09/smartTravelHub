@@ -69,7 +69,8 @@ const PostForm =()=>{
           title:dataInputs.title,
           country:dataInputs.country,
           state:dataInputs.state,
-          days:dataInputs.day
+          days:dataInputs.day,
+          likes:0
       })
       .then((res)=>{
           console.log("data received")
