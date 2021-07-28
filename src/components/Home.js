@@ -66,12 +66,13 @@ const Home = ()=>{
     return (
         <div>
           
-            <h1>Home</h1>
+            <h1 className="home_title">Smart Travel Hub</h1>
             <SearchBar  searchPosts={searchPosts}  />
-            <p onClick={()=>history.push("/postForm")}>+</p >
-            {/* {console.log("result",posts)} */}
-            {/* {posts.result == "No Result"? <h1>No Result</h1> :  */}
-            {posts.result == "No Result"? <h1>No Result</h1> :  <PostList refresh={refresh} searchResult={searchResult} posts={posts}/>}
+           
+            {/* <p className="add_post" onClick={()=>history.push("/postForm")}>+</p > */}
+          
+            {posts.result == "No Result"? <div><h1>No Result</h1><p className="add_post" onClick={()=>history.push("/postForm")}>+</p ></div> :  <PostList refresh={refresh} searchResult={searchResult} posts={posts}/>}
+       
         </div>
     )
 }

@@ -12,7 +12,7 @@ const SearchBar = ({searchPosts}) => {
        setSearchVal("")
    }
  
-   return( <form >
+   return( <form className="search_form">
         <input
             type="text"
             placeholder="Search travel posts"
@@ -21,7 +21,7 @@ const SearchBar = ({searchPosts}) => {
             onInput={(e)=>setSearchVal(e.target.value)}
           
         />
-        <button type="submit" onClick={search}>Search</button>
+        <button className="search_button" type="submit" onClick={search}>Search</button>
       
     </form>
     )

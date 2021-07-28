@@ -48,9 +48,7 @@ const PostList = ({searchResult,posts,refresh})=>{
     console.log("!!search", !!searchResult, searchResult)
     return (
         <div>
-            <h1>post</h1>
-           
-            {searchResult? (<div><h1>Search Result for {searchResult} </h1>{post_list()}</div>):post_list()}
+            {searchResult? (<div><h1>Search Result for {searchResult} </h1>{post_list()}</div>):<div className="posts_list">   <p className="add_post" onClick={()=>history.push("/postForm")}>+</p >{post_list()}</div>}
             {/* {posts.map(post=>{
                 return (
                     <div>
