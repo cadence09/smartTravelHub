@@ -15,7 +15,7 @@ const Home = ()=>{
     },[])
  
     const getPosts=()=>{
-        axios.get('http://localhost:5000/travelposts')
+        axios.get('https://smart-travel-hub-backend.herokuapp.com/travelposts')
         .then((res)=>{
             
             setPosts(res.data)
@@ -26,7 +26,7 @@ const Home = ()=>{
     }
     const searchPosts=(val)=>{
         if(val){
-        axios.get(`http://localhost:5000/travelposts/search/${val}`)
+        axios.get(`https://smart-travel-hub-backend.herokuapp.com/travelposts/search/${val}`)
         .then(res=>{
             
             
