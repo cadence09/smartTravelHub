@@ -1,6 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import axios from "axios";
-
+import "../App.css";
+import history from '../history';
+import worldTravel from "../images/worldTravel.jpeg"
 const PostForm =()=>{
   
     const generateDefaultData=()=>{
@@ -64,7 +66,7 @@ const PostForm =()=>{
        
     
         dataInputs.day=values;
-      console.log("dd",dataInputs)
+    
       axios.post('http://localhost:5000/travelposts',{
           title:dataInputs.title,
           country:dataInputs.country,
@@ -109,28 +111,41 @@ const uploadPhoto=(day_id,e)=>{
 
 
     return (
-        <div>
-        <h1>Post form</h1>
-        <form onSubmit={onformSubmitted}>
+        <div className="post_form_body">
+        <h1 className="home_title" onClick={()=>history.push("/")} >Smart Travel Hub</h1>
            
-               <input type="text" placeholder="Title" className="title" onChange={textInput} value={dataInputs.title}></input>
-  
-               <input type="text" placeholder="Country" className="country" onChange={textInput} value={dataInputs.country}></input>
-           
+        <div className="post_form">
+        <h2>Post Your Travel experience</h2>
+        <form onSubmit={onformSubmitted} >
+            <div className="input_field">
+               <label htmlFor="title">Title <br/>
+               <input type="text" id="title" placeholder="Title" className="title" onChange={textInput} value={dataInputs.title}></input>
+               </label><br/>
+               <div className="travelLocation">
+               <label htmlFor="country">Country:<br/>
+               <input type="text" id="country" placeholder="Country" className="country" onChange={textInput} value={dataInputs.country}></input>
+               </label>
+               <label htmlFor="country">State:<br/>
                <input type="text" placeholder="State" className="state" onChange={textInput} value={dataInputs.state}></input>
-    
+                </label>
+                </div>
+                </div>
          { dayforms.map((form,i)=>{
              return (
-                <section>
-                    Day {i+1} Trip
-               <input type="text" placeholder="destination" className="destination" onChange={(e)=>dayInput(i,e)} values={dayInput[i]} ></input>
-               <input type="text" placeholder="share your experience with this destination" className="content" onChange={(e)=>dayInput(i,e)} values={dayInput[i]}/>
+                <section className="input_field"> <br/>
+                    Day {i+1} Trip<br/>
+                    <label htmlFor="destination">Destination<br/>
+               <input type="text" id="destination" placeholder="destination" className="destination" onChange={(e)=>dayInput(i,e)} values={dayInput[i]} ></input>
+               </label><br/>
+               <label htmlFor="destination">Share Your Travels<br/>
+               <textarea type="text" id="experience" placeholder="share your experience with this destination" rows="5" cols="40" className="content" onChange={(e)=>dayInput(i,e)} values={dayInput[i]}/>
+               </label><br/>
                <input type="file" onChange={(e)=>uploadPhoto(form.day_Id,e)} multiple/> 
               {photos.filter((photo)=>photo.day_id ==form.day_Id).map(data=>{
                
                    return (
                       
-                     <img height="300" width="200" src={data.photo}/>
+                     <img height="50" width="50" src={data.photo}/>
                   ) 
                 })}
                
@@ -140,6 +155,7 @@ const uploadPhoto=(day_id,e)=>{
           <p onClick={addDayForm}>+ add day</p> 
            <button type="submit"> Submit</button>
         </form>
+        </div>
         </div>
     )
 }

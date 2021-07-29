@@ -7,7 +7,6 @@ const SearchBar = ({searchPosts}) => {
    const search=(e)=>{
        const newSearch=searchVal
        e.preventDefault()
-       console.log("newSeach",newSearch)
        searchPosts(newSearch)
        setSearchVal("")
    }

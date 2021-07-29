@@ -14,19 +14,144 @@
 .add_post{
   height:200px;
     width:300px;
-    background-color: green;
+    background-image: url("https://placeimg.com/640/480/nature");
+    background-position: center;
     margin:0;
-    
-
+    color:white;
+    font-size:4em;
+    text-align:center
+  
 }
 
-
+span {
+  font-size:0.5em;
+}
 .posts_list{
   display:flex;
   flex-direction:row;
   justify-content:space-evenly;
+  margin-top:2%;
+  flex-wrap: wrap;
 }
 
+.noResult{
+  margin-left:3em;
+}
+.result{
+  margin-left:1.5em;
+}
+
+.post_form_background_picture{
+   width:100%;
+   margin-bottom: 0;
+   height: 30em;
+ 
+}
+
+.post_form_body{
+
+  text-align: center;
+  background-image:url("./images/worldTravel.jpeg");
+  height: 100vh;
+  background-size:cover; 
+
+}
+.post_form{
+  display: inline-block;
+  border:2px solid black;
+  width:500px;
+  height:auto;
+  background-color:lightblue;
+  opacity: 0.9;
+  padding-bottom:0.5em
+}
+
+.input_field{
+  text-align: left;
+  margin-left:2em;
+  opacity: 1;
+}
+
+label {
+  line-height: 1.5em; 
+}
+
+.travelLocation{
+  display:flex;
+}
+.travelLocation label:last-child{
+  margin-left:2em;
+}
+
+.progress {
+  border-left: 6px dotted grey;
+  margin:0.5em
+}
+
+.days{
+  margin-left:3%
+}
+
+.margin{
+ margin-left:2em
+}
+
+.airplane {
+  width:20%;
+  height:auto;
+  opacity: 0.7;
+  position: absolute;
+  animation:flying-airplane 6s infinite cubic-bezier(0.5, 0.5, 0.5, 0.5);
+  z-index: -1;
+}
+
+@keyframes flying-airplane{
+
+  0% {
+    bottom: 0%;
+    left: 0%;
+
+  }
+
+  40%{
+    bottom: 15%;
+    left: 70%;
+    transform:scaleX(-1);
+  }
+
+  41%{
+    bottom: 20%;
+    left: 70%;
+    
+  }
+
+  50%{
+    bottom: 30%;
+    left: 60%;
+    transform:scaleX(-1);
+  }
+
+  90%{
+    bottom: 70%;
+    left: 40%;
+    opacity: 1;
+
+  }
+ 
+  98%{
+    bottom: 70%;
+    left: 40%;
+    opacity: 1;
+  }
+  100%{
+    bottom: 70%;
+    left: 40%;
+    opacity: 0;
+  }
+
+
+
+}
 .carousel-container {
 	width: 50%;
 	height: 50vh;
