@@ -67,7 +67,7 @@ const PostForm =()=>{
     
         dataInputs.day=values;
     
-      axios.post('http://localhost:5000/travelposts',{
+      axios.post('https://smart-travel-hub-backend.herokuapp.com/travelposts',{
           title:dataInputs.title,
           country:dataInputs.country,
           state:dataInputs.state,

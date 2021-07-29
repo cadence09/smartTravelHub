@@ -12,7 +12,7 @@ const PostCard = ()=>{
     console.log({id})
     const [travelPosts,setTravelPosts] =useState([])
     useEffect(()=>{
-        axios.get(`http://localhost:5000/travelposts/${id}`)
+        axios.get(`https://smart-travel-hub-backend.herokuapp.com/travelposts/${id}`)
         .then(res=>{
             
             setTravelPosts(res.data)

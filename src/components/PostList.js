@@ -12,7 +12,7 @@ const PostList = ({searchResult,posts,refresh})=>{
          if(post_id == posts[i].id){
            
              posts[i].likes+=1
-             axios.patch(`http://localhost:5000/travelposts/${post_id}`,{
+             axios.patch(`https://smart-travel-hub-backend.herokuapp.com/travelposts/${post_id}`,{
                 likes_count:posts[i].likes
             })
             .then(()=>{
